@@ -97,7 +97,7 @@ const AnimationList = ({ page }: { page: number }) => {
   const { data, refetch } = useSuspenseQuery<PageData>(QUERY, {
     variables: { page, perPage: 10 },
   });
-  const { currentPage, lastPage } = data?.Page?.pageInfo ?? {};
+  const { currentPage, lastPage } = data.Page.pageInfo;
   return (
     <>
       <button onClick={() => refetch()}>Refetch</button>
